@@ -10,12 +10,13 @@ import {
   interviewModeOptions,
 } from "./constants";
 import { useData } from "./DataProvider";
-import * as Yup from "yup";
+import * as Yup from "yup"; //yup is used to add validations
 
 const InterviewDetailsForm: React.FC<{
   handleTab: (n: PageNumbers) => void;
 }> = ({ handleTab }) => {
-
+  
+  // data from the DataProvider
   const {setState}: any = useData()
 
   const {
@@ -42,6 +43,7 @@ const InterviewDetailsForm: React.FC<{
     },
   });
 
+  // useEffect hook is used to update state of the values using setState whenever there is an update in the value
   useEffect(() => {
     setState((prev: any) => ({...prev, interviewSettings: values}))
   }, [values])

@@ -11,6 +11,7 @@ const JobDetailsForm: React.FC<{
   handleTab: (n: PageNumbers) => void;
 }> = ({ handleTab }) => {
 
+  // data from DataProvider
   const {setState} : any = useData()
 
   const { handleChange, errors, touched, handleBlur, handleSubmit, values } =
@@ -31,6 +32,7 @@ const JobDetailsForm: React.FC<{
       },
     });
 
+    //  useEffect hook is used to update state of the values using setState whenever there is an update in the value
     useEffect(() => {
       setState((prev: any) => ({...prev, jobDetails: values}))
     }, [values])

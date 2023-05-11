@@ -29,6 +29,7 @@ const CustomTab: React.FC<TabProps> = ({ children, ...props }) => {
 const HomeLayout = () => {
   const [page, setPage] = useState<PageNumbers>(0);
 
+  // useContext hook for state management 
   const {state} : any = useData()
 
   const handlePage = (pageNumber: PageNumbers) => {
@@ -59,6 +60,9 @@ const HomeLayout = () => {
                 <InterviewSettingsForm handleTab={handlePage} />
               </TabPanel>
             </TabPanels>
+
+            {/* the state of requisitionDetails, jobDetails and interviewSettings needs to be passed as props so that the state can be displayed on the preview card */}
+            
             <DisplayCard 
               requisitionDetails={state.requisitionDetails}
               jobDetails={state.jobDetails}

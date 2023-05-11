@@ -48,6 +48,7 @@ const RequisitionDetailsForm: React.FC<{
     },
   });
 
+  //  useEffect hook is used to update state of the values using setState whenever there is an update in the value
   useEffect(() => {
     setState((prev: any) => ({...prev, requisitionDetails: values}))
   }, [values])
